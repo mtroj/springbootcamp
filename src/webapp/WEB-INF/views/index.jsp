@@ -13,7 +13,7 @@
         </a>
     </li>
     <li>
-        <a href="product.html">
+        <a href="product-form.html">
             Dodaj produkt
         </a>
     </li>

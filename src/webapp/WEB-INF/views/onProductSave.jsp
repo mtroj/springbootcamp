@@ -5,7 +5,7 @@
 </head>
 <body>
 <p>
-    Dodano nowy produkt o nazwie ${product.name} w cenie ${product.price}
+    Zapisano produkt ${product.name} w cenie ${product.price}
 </p>
 <a href="/">Menu główne</a>
 </body>

@@ -5,9 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Edit produkt</h1>
-<f:form method="post" modelAttribute="product" action="product.html">
-    <f:hidden path="id"/>
+<h1>Dodaj produkt</h1>
+<f:form method="post" modelAttribute="product">
     <p>
         Nazwa:<f:input path="name"/>
          <p>
@@ -20,6 +19,7 @@
             <f:errors path="price"/>
         </p>
     </p>
+    <f:hidden path="id"/>
     <button type="submit">Dodaj</button>
 </f:form>
 </body>

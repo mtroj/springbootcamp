@@ -28,25 +28,24 @@ public class ProductsController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "product.html", method = RequestMethod.GET)
+    @RequestMapping(value = "product-form.html", method = RequestMethod.GET)
     public ModelAndView showAddProductForm(@RequestParam(name = "id", required = false) Integer id) {
+        ModelAndView modelAndView = new ModelAndView("productForm");
         if (id != null) {
-            ModelAndView modelAndView = new ModelAndView("editProduct");
             modelAndView.addObject(productService.findProduct(id));
             return modelAndView;
         }
-        ModelAndView modelAndView = new ModelAndView("addProduct");
         modelAndView.addObject(new Product());
         return modelAndView;
     }
 
-    @RequestMapping(value = "product.html", method = RequestMethod.POST)
+    @RequestMapping(value = "product-form.html", method = RequestMethod.POST)
     public ModelAndView addProduct(@Valid @ModelAttribute Product product, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return new ModelAndView("addProduct");
+            return new ModelAndView("product");
         }
         productService.addProduct(product);
-        return new ModelAndView("addProductConfirmation", "product", product);
+        return new ModelAndView("onProductSave", "product", product);
     }
 
 }
