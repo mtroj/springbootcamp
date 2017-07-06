@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Edit produkt</h1>
-<f:form method="post" modelAttribute="product">
+<f:form method="post" modelAttribute="product" action="product.html">
     <f:hidden path="id"/>
     <p>
         Nazwa:<f:input path="name"/>
