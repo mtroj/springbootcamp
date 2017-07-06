@@ -29,7 +29,7 @@ public class ProductsController {
     }
 
     @RequestMapping(value = "product-form.html", method = RequestMethod.GET)
-    public ModelAndView showAddProductForm(@RequestParam(name = "id", required = false) Integer id) {
+    public ModelAndView showProductForm(@RequestParam(name = "id", required = false) Integer id) {
         ModelAndView modelAndView = new ModelAndView("productForm");
         if (id != null) {
             modelAndView.addObject(productService.findProduct(id));
@@ -40,9 +40,12 @@ public class ProductsController {
     }
 
     @RequestMapping(value = "product-form.html", method = RequestMethod.POST)
-    public ModelAndView addProduct(@Valid @ModelAttribute Product product, BindingResult bindingResult) {
+    public ModelAndView saveProduct(@Valid @ModelAttribute Product product, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return new ModelAndView("product");
+        }
+        if (product.getId() == null) {
+
         }
         productService.addProduct(product);
         return new ModelAndView("onProductSave", "product", product);
