@@ -3,10 +3,7 @@ package pl.com.sages.spring.bootcamp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pl.com.sages.spring.bootcamp.model.Product;
 import pl.com.sages.spring.bootcamp.service.ProductService;
@@ -28,6 +25,14 @@ public class ProductsController {
     public ModelAndView getAllProducts() {
         ModelAndView modelAndView = new ModelAndView("products");
         modelAndView.addObject("products", productService.findAllProducts());
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "edit-product.html", method = RequestMethod.GET)
+    public ModelAndView showEditProductForm(@RequestParam("id") int id) {
+        Product product = productService.findProduct(id);
+        ModelAndView modelAndView = new ModelAndView("editProduct");
+        modelAndView.addObject(product);
         return modelAndView;
     }
 

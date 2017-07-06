@@ -22,6 +22,7 @@
                 <td>${product.id}</td>
                 <td>${product.name}</td>
                 <td><f:formatNumber type="currency" value="${product.price}"/></td>
+                <td><a href="edit-product.html?id=${product.id}">Edit</a></td>
             </tr>
         </c:forEach>
     </tbody>
