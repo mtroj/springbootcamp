@@ -30,7 +30,7 @@ public class ProductServiceTest extends AbstractTransactionalJUnit4SpringContext
         int count1 = jdbcTemplate.queryForObject("Select count(*) from product where name like ?", Integer.class, productName);
 
         // when
-        productService.addProduct(productName, price);
+        //productService.addProduct(productName, price);
 
         // then
         int count2 = jdbcTemplate.queryForObject("Select count(*) from product where name like ?", Integer.class, productName);
@@ -40,7 +40,7 @@ public class ProductServiceTest extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void should_get_product_by_id() throws Exception {
         //given
-        productService.addProduct("lskjf", 120);
+        //productService.addProduct("lskjf", 120);
         Integer id = jdbcTemplate.queryForObject("select max(id) from product", Integer.class);
 
         // when

@@ -13,8 +13,7 @@ public class ProductService {
     @Autowired
     private ProductDao productDao;
 
-    public void addProduct(String name, int price) {
-        Product product = new Product(0, name, price);
+    public void addProduct(Product product) {
         productDao.addProduct(product);
     }
 
