@@ -12,4 +12,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <mvc:view-controller path="index.html" view-name="index"/>
+    <mvc:view-controller path="/" view-name="index"/>
+
 </beans>
