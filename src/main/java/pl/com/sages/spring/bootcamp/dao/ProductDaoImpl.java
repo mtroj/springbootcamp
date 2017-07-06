@@ -16,7 +16,7 @@ public class ProductDaoImpl implements ProductDao {
 
     private RowMapper<Product> productRowMapper = (rs, rowNum) -> {
 
-        int id = rs.getInt("id");
+        Long id = rs.getLong("id");
         String name = rs.getString("name");
         double price = rs.getDouble("price");
 

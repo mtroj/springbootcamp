@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern;
 
 public class Product {
 
-    private int id;
+    private Long id;
     @Pattern(regexp = "\\w+")
     @NotEmpty
     private String name;
@@ -16,7 +16,7 @@ public class Product {
     @Min(1)
     private double price;
 
-    public Product(int id, String name, double price) {
+    public Product(Long id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -25,11 +25,11 @@ public class Product {
     public Product() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
